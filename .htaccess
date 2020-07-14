@@ -1,0 +1,6 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteRule ^inicio/ index.php
+RewriteRule ^login/ Vistas/login.php
+RewriteRule ^registro/ Vistas/registro.php
