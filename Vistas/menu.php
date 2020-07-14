@@ -16,6 +16,11 @@ session_start();
         <a class="nav-item nav-link" href="<?php echo SERVIDOR ?>login/">Iniciar Session</a>
         <a class="nav-item nav-link" href="<?php echo SERVIDOR ?>registro/">Registro</a>
       <?php } ?>
+      <?php
+      if (!empty($_SESSION['usuario'])) {
+      ?>
+        <a class="nav-item nav-link" href="<?php echo SERVIDOR ?>home/">Administrar Noticias</a>
+      <?php } ?>
     </div>
 
   </div>

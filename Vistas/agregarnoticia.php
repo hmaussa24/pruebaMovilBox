@@ -1,3 +1,11 @@
+<?php 
+session_start(); 
+include "../config/config.php";
+if($_SESSION['usuario'] == null && $_SESSION['token'] == null){
+    header("Location:". SERVIDOR . "login/");
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -16,6 +24,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../public/editor.css">
     <link rel="stylesheet" type="text/css" href="../public/estilos.css">
+    
     <script type="text/javascript">
         $(document).ready(function() {
             $('#txt-content').Editor();
@@ -29,6 +38,7 @@
             });
         });
     </script>
+    <script type="text/javascript" src="../public/js/noticias.js"></script>
 </head>
 
 <body>
@@ -39,14 +49,14 @@
     </section>
     <div class="container">
         <div class="abs-center-n">
-            <form>
+            <form id="nuevanoticia" name="nuevanoticia">
                 <div class="form-group">
                     <label for="formGroupExampleInput">Titulo:</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Agregue un titulo aqui">
+                    <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Agregue un titulo aqui">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Foto</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    <input type="file" class="form-control-file" id="foto" name="foto">
                 </div>
             </form>
             <form action="" method="post" id="frm-test">

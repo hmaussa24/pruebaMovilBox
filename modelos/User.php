@@ -27,7 +27,7 @@ class User {
         $data = $this->db->Select("select * from users where nombre=:user", ['user' => $user]);
         //var_dump($data); exit;   
         if($data[0]['pwd'] == $pwd){
-            return true;
+            return $data;
         }else{
             return false;
         }     

@@ -8,3 +8,4 @@ RewriteRule ^nuevanoticia/ Vistas/agregarnoticia.php
 RewriteRule ^registraruser/ controladores/userController.php
 RewriteRule ^loginad/ controladores/loginController.php
 RewriteRule ^logout/ controladores/logout.php
+RewriteRule ^addnew/ controladores/addnew.php
