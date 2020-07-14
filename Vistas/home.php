@@ -1,3 +1,10 @@
+<?php 
+session_start(); 
+include "../config/config.php";
+if($_SESSION['usuario'] == null && $_SESSION['token'] == null){
+    header("Location:". SERVIDOR . "login/");
+}
+?>
 <!doctype html>
 <html lang="es">
 

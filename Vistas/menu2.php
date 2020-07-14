@@ -13,7 +13,7 @@
 
     </div>
     <div class="form-inline my-2 my-lg-0">
-            <span class="badge badge-secondary" style="margin: 4px;">Bienvenido: Harold Maussa Rivas</span>
-            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Salir</button>
+            <span class="badge badge-secondary" style="margin: 4px;">Bienvenido: <?php echo $_SESSION['usuario'] ?></span>
+            <a class="btn btn-outline-secondary my-2 my-sm-0" type="submit" href="<?php echo SERVIDOR ?>logout/">Salir</a>
         </div>
 </nav>

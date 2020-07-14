@@ -6,3 +6,5 @@ RewriteRule ^registro/ Vistas/registro.php
 RewriteRule ^home/ Vistas/home.php
 RewriteRule ^nuevanoticia/ Vistas/agregarnoticia.php
 RewriteRule ^registraruser/ controladores/userController.php
+RewriteRule ^loginad/ controladores/loginController.php
+RewriteRule ^logout/ controladores/logout.php

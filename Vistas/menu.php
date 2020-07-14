@@ -1,4 +1,5 @@
 <?php
+session_start();
 @include "../config/config.php"
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -9,13 +10,22 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="<?php echo SERVIDOR ?>inicio/">Noticias<span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="<?php echo SERVIDOR ?>login/">Iniciar Session</a>
-      <a class="nav-item nav-link" href="<?php echo SERVIDOR ?>registro/">Registro</a>
+      <?php
+      if (empty($_SESSION['usuario'])) {
+      ?>
+        <a class="nav-item nav-link" href="<?php echo SERVIDOR ?>login/">Iniciar Session</a>
+        <a class="nav-item nav-link" href="<?php echo SERVIDOR ?>registro/">Registro</a>
+      <?php } ?>
     </div>
 
   </div>
-  <div class="form-inline my-2 my-lg-0">
-      <span class="badge badge-secondary" style="margin: 4px;">Bienvenido: Harold Maussa Rivas</span>
-      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Salir</button>
+
+  <?php
+  if (!empty($_SESSION['usuario'])) {
+  ?>
+    <div class="form-inline my-2 my-lg-0">
+      <span class="badge badge-secondary" style="margin: 4px;">Bienvenido: <?php echo $_SESSION['usuario'] ?></span>
+      <a class="btn btn-outline-secondary my-2 my-sm-0" type="submit" href="<?php echo SERVIDOR ?>logout/">Salir</a>
     </div>
+  <?php } ?>
 </nav>
