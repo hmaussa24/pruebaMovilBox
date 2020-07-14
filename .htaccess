@@ -1,8 +1,8 @@
 Options +FollowSymLinks
 RewriteEngine on
-
-RewriteRule ^inicio/ index.php
+RewriteRule ^inicio/ Vistas/inicio.php
 RewriteRule ^login/ Vistas/login.php
 RewriteRule ^registro/ Vistas/registro.php
 RewriteRule ^home/ Vistas/home.php
 RewriteRule ^nuevanoticia/ Vistas/agregarnoticia.php
+RewriteRule ^registraruser/ controladores/userController.php
